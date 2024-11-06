@@ -29,7 +29,9 @@ void Main()
     Console.WriteLine($"- {ntpTime.ToString("dd.mm.yyyy HH:mm:ss")}");
     Console.WriteLine($"- {ntpTime.ToString("dd.mm.yyyy")}\n");
 
-    
+    TimeSpan timeSpan = DateTime.Now - ntpTime;
+
+    Console.WriteLine($"Différence de temps : {timeSpan}");
 
     ntpClient.Close();
 
