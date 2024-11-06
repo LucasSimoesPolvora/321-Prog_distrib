@@ -5,11 +5,9 @@ Character Johnny = new Character
 {
     FirstName = "Peter",
     LastName = "Parker",
-    Description = "Spider-man",
-    PlayedBy = null
+    Description = "Spider-man"
 };
 
 Console.WriteLine(JsonSerializer.Serialize(Johnny));
-
-string serializedCaracter = Johnny.Serialize();
-Johnny.ToJson(serializedCaracter);
+Character load = new Character();
+Console.WriteLine(JsonSerializer.Serialize(load.Deserialize()));
