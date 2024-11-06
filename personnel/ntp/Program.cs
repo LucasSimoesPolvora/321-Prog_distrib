@@ -33,6 +33,18 @@ void Main()
 
     Console.WriteLine($"Différence de temps : {timeSpan}");
 
+    DateTime local = ntpTime + timeSpan;
+
+    Console.WriteLine($"Heure actuelle corrigée : {local.ToString()}");
+
+    Console.WriteLine($"Heure UTC : {local.ToUniversalTime().ToString()}");
+
+    Console.WriteLine($"Heure locale : {ntpTime.ToLocalTime()}");
+
+    Console.WriteLine($"Heure GMT: {local.ToUniversalTime().AddHours(-1)}");
+
+    Console.WriteLine($"Heure Gmt en local: {local.ToUniversalTime().AddHours(-1).AddHours(1)}");
+
     ntpClient.Close();
 
     Console.ReadLine();
